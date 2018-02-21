@@ -24,6 +24,7 @@ print("Items: " + str(arr) + "\n")
 
 for item in arr:
     print("Item " + str(item) + " is number? : " + str(is_number(item)))
+
 print('\n===================\n')
 
 for item in arr:
