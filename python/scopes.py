@@ -12,7 +12,7 @@ def bacon():
 
 def spam2():
     global eggs
-    eggsn = 'spam'
+    eggs = 'spam'
 
 
 eggs = 'global'
