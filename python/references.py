@@ -1,7 +1,6 @@
 #!/usr/local/bin/python3
 import copy
 
-
 def eggs(someParameter):
     someParameter.append('Hello')
 
