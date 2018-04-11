@@ -7,6 +7,7 @@ def collatz(number):
         print(3 * number + 1)
         return 3 * number + 1
 
+
 result = 0
 while result != 1:
     print("Enter number:")
