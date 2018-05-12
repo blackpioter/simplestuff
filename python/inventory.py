@@ -24,7 +24,12 @@ displayInventory(stuff)
 print("---------------------------------------------------")
 
 inv = {'gold coin': 42, 'rope': 1}
-dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-inv = addToInventory(inv, dragonLoot)
+displayInventory(inv)
+print()
 
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+print(dragonLoot)
+print()
+
+inv = addToInventory(inv, dragonLoot)
 displayInventory(inv)
