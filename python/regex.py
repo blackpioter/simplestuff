@@ -15,4 +15,4 @@ print(mo.group(1))  # show which group applied
 # Failing a regex
 batRegex = re.compile(r'Bat(man|mobile|copter)')
 mo = batRegex.search('Batcycle lost a wheel')
-print("If not found should be equal none: " + str(mo == None))  # Simple output
+print("If not found should be equal none: " + str(mo is None))  # Simple output
