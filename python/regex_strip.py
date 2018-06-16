@@ -4,7 +4,7 @@ import sys
 
 
 def regex_strip(text, chars=' '):
-    result = re.search(' *[{s}]*(.*?)[{s}]* *$'.format(s=chars), text).group(1)
+    result = re.search('^[{s}]*(.*?)[{s}]*$'.format(s=chars), text).group(1)
     print('\'' + result + '\'')
 
 
