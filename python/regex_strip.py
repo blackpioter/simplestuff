@@ -3,15 +3,9 @@ import re
 import sys
 
 
-def regex_strip(inp, toRemove=' '):
-    out = inp
-    for char in toRemove:
-        regex_start = r"^" + re.escape(char)
-        regex_end = re.escape(char) + r"$"
-
-        out = re.sub(regex_start, '', out)
-        out = re.sub(regex_end, '', out)
-    print(out)
+def regex_strip(text, chars=' '):
+    result = re.search(' *[{s}]*(.*?)[{s}]* *$'.format(s=chars), text).group(1)
+    print('\'' + result + '\'')
 
 
 if len(sys.argv) == 1:
@@ -21,10 +15,10 @@ if len(sys.argv) == 1:
           " string_of_chars_to_strip")
     exit()
 elif len(sys.argv) < 3:
-    inp = sys.argv[1]
+    text = sys.argv[1]
     chars = ' '
 else:
-    inp = sys.argv[1]
+    text = sys.argv[1]
     chars = sys.argv[2]
 
-regex_strip(inp, chars)
+regex_strip(text, chars)
