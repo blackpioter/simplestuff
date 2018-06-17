@@ -1,5 +1,7 @@
 hello.txt
-# Created by https://www.gitignore.io/api/osx,linux,python,windows
+
+
+# Created by https://www.gitignore.io/api/osx,vim,linux,python,windows
 
 ### Linux ###
 *~
@@ -143,6 +145,17 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+### Vim ###
+# swap
+.sw[a-p]
+.*.sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+# auto-generated tag files
+tags
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -165,4 +178,4 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# End of https://www.gitignore.io/api/osx,linux,python,windows
+# End of https://www.gitignore.io/api/osx,vim,linux,python,windows
