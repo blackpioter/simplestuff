@@ -23,6 +23,8 @@ def explain(word):
         return jp[word]
     elif word.title() in jp:
         return jp[word.title()]
+    elif word.upper() in jp:
+        return jp[word.upper()]
     elif len(suggestion) > 0:
         ans = str(input("%s not found. Did you mean %s (Y/n)? " % (word, suggestion)) or "Y")
         if ans in ("Y", "y"):
