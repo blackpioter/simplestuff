@@ -2,11 +2,8 @@ import json
 from difflib import get_close_matches
 
 def print_ans(ans):
-    if isinstance(ans, str):
-        print(ans)
-    else:
-        for i in range(len(ans)):
-            print("%s. %s" % (i+1, ans[i]))
+    for i in range(len(ans)):
+        print("%s. %s" % (i+1, ans[i]))
 
 
 def suggest(word):
