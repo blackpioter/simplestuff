@@ -8,6 +8,13 @@ lon = data["LON"]
 elev = data["ELEV"]
 name = list(data["NAME"])
 
+def color_producer(elev):
+    if elev < 1000:
+        return "green"
+    elif elev < 3000:
+        return "orange"
+    else:
+        return "red"
 
 map = folium.Map(location=[40.7735, -111.9143], zoom_start=6)
 
@@ -20,7 +27,12 @@ Height: %s m
 fg = folium.FeatureGroup(name="My Map")
 for lt, ln, el, name in zip(lat, lon, elev, name):
     iframe = folium.IFrame(html=html % (name, name, el), width=200, height=100)
-    fg.add_child(folium.Marker(location=[lt, ln], popup=folium.Popup(iframe, parse_html=True), icon=folium.Icon(color='darkblue')))
+    fg.add_child(folium.CircleMarker(location=[lt, ln],
+                                     popup=folium.Popup(iframe, parse_html=True),
+                                     fill_opacity=0.7,
+                                     fill=True,
+                                     color = 'grey',
+                                     fill_color=color_producer(el)))
 
 map.add_child(fg)
 
