@@ -16,7 +16,7 @@ Close
 from tkinter import *
 from backend import Database
 
-database=Database()
+database=Database("books.db")
 
 def get_selected_row(event):
     global selected_tuple
