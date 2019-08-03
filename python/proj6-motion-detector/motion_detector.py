@@ -36,6 +36,8 @@ while True:
         cv2.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), 3)
 
     status_list.append(status)
+    status_list=status_list[-2:]
+
     if status_list[-1]==1 and status_list[-2]==0:
         times.append(datetime.now())
     if status_list[-1]==0 and status_list[-2]==1:
@@ -58,8 +60,9 @@ print(times)
 
 for i in range(0,len(times),2):
     print(i)
-    df.append({"Start":times[i],"End":times[i+1]},ignore_index=True)
+    df=df.append({"Start":times[i],"End":times[i+1]},ignore_index=True)
 
+print(df)
 df.to_csv("Times.csv")
 
 video.release()
